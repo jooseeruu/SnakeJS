@@ -6,8 +6,12 @@ const canvas = document.getElementById("Caja");
 const ctx = canvas.getContext("2d");
 
 const tablero = new Tablero(canvas, 15, 14);
-const serpiente = new Serpiente(); // Instanciamos la serpiente sin color base todavía
+const serpiente = new Serpiente();
 const comida = new Comida(["#ff0000", "#ffa500", "#ffff00", "#008000"]);
+const crunch = new Audio("/src/sounds/crunch.mp3");
+crunch.volume = 0.3;
+
+let puntuacion = 0; // Inicializar la puntuación
 
 // Obtener el input de color desde el HTML
 const colorPicker = document.getElementById("colorPicker");
@@ -32,7 +36,7 @@ let juegoActivo = true;
 // Fin del juego
 function finDeJuego() {
   juegoActivo = false;
-  alert("¡Juego terminado!");
+  alert(`¡Juego terminado! Puntuación final: ${puntuacion}`);
   window.location.reload(); // Recargar la página para reiniciar el juego
 }
 
@@ -51,6 +55,12 @@ document.addEventListener("keydown", (event) => {
     if (serpiente.direccion.y === 0) serpiente.direccion = { x: 0, y: 1 }; // Abajo
   }
 });
+
+// Función para actualizar la puntuación en el HTML
+function actualizarPuntuacion() {
+  const puntuacionElemento = document.getElementById("puntuacion");
+  puntuacionElemento.textContent = `Puntuación: ${puntuacion}`;
+}
 
 // Función principal del juego
 function jugar() {
@@ -74,6 +84,9 @@ function jugar() {
     tablero.quitarComida(cabeza.x, cabeza.y); // Limpiar la comida del tablero
     comida.generar(tablero); // Generar una nueva comida
     serpiente.crece(); // Incrementar el tamaño de la serpiente
+    puntuacion++; // Incrementar la puntuación
+    actualizarPuntuacion(); // Actualizar la puntuación en el HTML
+    crunch.play(); // Reproducir el sonido de comer
   }
 
   // Dibujar la serpiente y la comida

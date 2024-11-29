@@ -1,2 +1,66 @@
-#body {
+body {
+  background-color: #121212; /* Color de fondo oscuro */
+  color: #838383; /* Texto claro para contraste */
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+#Caja {
+  background-color: #1f1f1f; /* Fondo oscuro para el canvas */
+  border: 5px solid #002741; /* Borde con color */
+}
+
+#colorSelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+input[type="color"] {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  transition: all 0.3s ease;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+input[type="color"]::-moz-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+input[type="color"]:hover {
+  transform: scale(1.1);
+}
+
+input[type="color"]:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 3px 10px rgba(0, 0, 0, 0.19);
+  transform: scale(0.9);
+}
+
+#puntuacion {
+  font-size: 1.5em; /* Tamaño de la fuente */
+  margin-top: 20px; /* Margen superior */
+  color: #838383; /* Color del texto */
+  text-align: center; /* Alineación centrada */
 }

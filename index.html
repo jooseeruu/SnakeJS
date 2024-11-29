@@ -4,29 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Juego Snake</title>
-    <style>
-      #Caja {
-        border: 1px solid #000;
-        margin: 0 auto;
-        display: block;
-      }
-
-      #colorSelector {
-        margin-top: 20px;
-        display: block;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <style></style>
   </head>
   <body>
-    <h1>Snake Game</h1>
+    <h1>Snake</h1>
     <canvas id="Caja" width="650" height="580"></canvas>
 
     <!-- Selector de color -->
     <div id="colorSelector">
-      <label for="colorPicker">Selecciona el color base de la serpiente:</label>
-      <input type="color" id="colorPicker" value="#00b4d8" />
+      <input type="color" id="colorPicker" value="#9d0c3e" />
     </div>
+
+    <div id="puntuacion">Puntuación: 0</div>
 
     <!-- Archivos de JavaScript -->
     <script type="module" src="src/js/tablero.js"></script>

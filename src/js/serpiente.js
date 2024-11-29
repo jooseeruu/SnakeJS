@@ -1,5 +1,5 @@
 class Serpiente {
-  constructor(colorBase = { r: 0, g: 180, b: 216 }) {
+  constructor(colorBase = { r: 157, g: 12, b: 62 }) {
     this.cuerpo = [{ x: 5, y: 5 }];
     this.direccion = { x: 0, y: 0 };
     this.longitud = 1;
