@@ -10,11 +10,24 @@
         margin: 0 auto;
         display: block;
       }
+
+      #colorSelector {
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     <h1>Snake Game</h1>
     <canvas id="Caja" width="650" height="580"></canvas>
+
+    <!-- Selector de color -->
+    <div id="colorSelector">
+      <label for="colorPicker">Selecciona el color base de la serpiente:</label>
+      <input type="color" id="colorPicker" value="#00b4d8" />
+    </div>
+
     <!-- Archivos de JavaScript -->
     <script type="module" src="src/js/tablero.js"></script>
     <script type="module" src="src/js/game.js"></script>
